@@ -3,6 +3,14 @@ import java.io.*;
 import java.util.*;
 import java.util.Map.Entry;
 import java.security.*;
+/*
+WHAT NEED TO BE UPDATED:
+1. PARSER 
+2. CREATED A MAIN CLASS AND USE INVERTED ON SEPERATE CLASS
+3. CHANGE WORD COUNT AND MUST HAVE LOCATION ON DOC
+4. UPDATED TERMFERQUENCY, NOT DONE PROPERLY 
+5. CREATED A GUI FOR TERM SEARCH 
+*/
 
 public class Invert {
 	static HashMap<Integer, HashMap<String, Integer>> document = new HashMap<Integer, HashMap<String, Integer>>();
@@ -155,7 +163,9 @@ public class Invert {
         }
 
 	}
-
+/*
+Must be UPDATED, using match regex or JSON 
+*/
 	static void parseAllQueriesEval(File file, BufferedReader br)throws FileNotFoundException, IOException {
 		String line = null;
 		String values = "";
@@ -188,6 +198,7 @@ public class Invert {
         }
 	}
 	/// values contain a string of all the terms in abstract and title
+	//must be updated !!! 
 	static void countingTerms(String values, int on ) throws FileNotFoundException, IOException {
         HashMap<String, Integer> terms = new HashMap<String, Integer>() ;//terms will take the word and the TF(number of time it's in the document)
 	//	System.out.println(values);
