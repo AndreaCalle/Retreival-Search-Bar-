@@ -3,14 +3,6 @@ import java.io.*;
 import java.util.*;
 import java.util.Map.Entry;
 import java.security.*;
-/*
-WHAT NEED TO BE UPDATED:
-1. PARSER 
-2. CREATED A MAIN CLASS AND USE INVERTED ON SEPERATE CLASS
-3. CHANGE WORD COUNT AND MUST HAVE LOCATION ON DOC
-4. UPDATED TERMFERQUENCY, NOT DONE PROPERLY 
-5. CREATED A GUI FOR TERM SEARCH 
-*/
 
 public class Invert {
 	static HashMap<Integer, HashMap<String, Integer>> document = new HashMap<Integer, HashMap<String, Integer>>();
@@ -24,7 +16,7 @@ public class Invert {
 	//static HashMap<String, Double> termFreq = new HashMap<>();
 	static List<Double> cosineList = new ArrayList<>();
 
-	public static void main(String[] args) throws IOException {
+	public Invert() throws IOException {
 		
 		Scanner in = new Scanner(System.in);
 		System.out.println("Welcome to CPS842 Assignment 2");
@@ -77,7 +69,9 @@ public class Invert {
 		}
 
 	}
-
+/*
+Parsing the text, Will check on or off to version stemming 
+*/
     static  void makeHashMaps(String fileName, String stem) throws IOException{
 		if(stem.equals("off")){
 			File file = new File("cacm.all");
@@ -127,7 +121,9 @@ public class Invert {
 		queryPost.close();
 
 	}
-
+/*
+must make chnages , parsing isn't , will be using (JSON, LEX FILE , )
+*/
 	static void doStuff(File file, BufferedReader br) throws FileNotFoundException, IOException {
 		String line = null;
 		String values = " ";
@@ -164,7 +160,7 @@ public class Invert {
 
 	}
 /*
-Must be UPDATED, using match regex or JSON 
+def parseAllQUERIES(file, br)//buffer 
 */
 	static void parseAllQueriesEval(File file, BufferedReader br)throws FileNotFoundException, IOException {
 		String line = null;
@@ -198,7 +194,6 @@ Must be UPDATED, using match regex or JSON
         }
 	}
 	/// values contain a string of all the terms in abstract and title
-	//must be updated !!! 
 	static void countingTerms(String values, int on ) throws FileNotFoundException, IOException {
         HashMap<String, Integer> terms = new HashMap<String, Integer>() ;//terms will take the word and the TF(number of time it's in the document)
 	//	System.out.println(values);
@@ -219,7 +214,7 @@ Must be UPDATED, using match regex or JSON
                    duplicate[i] = docWords[i]; //will store word into duplicate
 				}
 				
-                for (int y = 0; y < docWords.length; y++) {
+                for (int y = 0; y < docWords.length; y++) {//CAN CREATE A FUNCTION 
                     if (duplicate[y].equals(docWords[i])) {//will check if the term is in the duplicate list 
                         check++;
                     }
@@ -269,7 +264,7 @@ Must be UPDATED, using match regex or JSON
 	}
 
 	static void removeCommonWords(File file, BufferedReader ch, HashMap<Integer, HashMap<String, Integer>> document2)
-			throws FileNotFoundException, IOException {
+		throws FileNotFoundException, IOException {
 		String line = null;
 
 		while ((line = ch.readLine()) != null) {
