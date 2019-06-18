@@ -28,6 +28,7 @@ public class Main {
 		}
 
         call(invert,stem,removeWord,fileName);
+        startSearch();
 
     }
 /*
@@ -39,6 +40,11 @@ Call methond will call the invert class and run the
       invert.readFromFile();
       invert.getQuery(in);
     }   
+
+    public static void startSearch(){
+
+
+    }
 
 
 }

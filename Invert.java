@@ -16,8 +16,11 @@ public class Invert {
 	//static HashMap<String, Double> termFreq = new HashMap<>();
 	static List<Double> cosineList = new ArrayList<>();
 
+
+	//this should start the search not be a constructor , much change it 
+	//contruct to make the file 
 	public Invert() throws IOException {
-		
+		/*
 		Scanner in = new Scanner(System.in);
 		System.out.println("Welcome to CPS842 Assignment 2");
 		System.out.println("Choose File(query.text or cacm.all) :");
@@ -30,7 +33,7 @@ public class Invert {
 		File commonWord = new File("common_words"); 
         BufferedReader ch = new BufferedReader(new FileReader(commonWord));
 		removeWord = removeWord.trim().toLowerCase(); 
-
+*/
       //  makeHashMaps();
 		if(removeWord.equals("on")){
 			removeCommonWords(commonWord, ch, document); 
@@ -41,7 +44,7 @@ public class Invert {
 		getQuery(in);
 
 
-        if(fileName.equals("cacm.all")){  
+       // if(fileName.equals("cacm.all")){  
 	
 			for (String term : userQuery) {
 				BufferedReader dff = new BufferedReader(new FileReader("Dictionary.txt"));
@@ -54,7 +57,8 @@ public class Invert {
 			termFrequency(document, idfValues, qWeight);
 		
 
-		}
+	//	}
+	/*
 		if(fileName.equals("query.txt")){
 	
 			for (String term : userQuery) {
@@ -67,7 +71,7 @@ public class Invert {
 
 			termFrequency(query, idfValues, qWeight);
 		}
-
+*/
 	}
 /*
 Parsing the text, Will check on or off to version stemming 
