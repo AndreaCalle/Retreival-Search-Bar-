@@ -17,8 +17,9 @@ public class Invert {
 	static List<Double> cosineList = new ArrayList<>();
 
 
-	//this should start the search not be a constructor , much change it 
-	//contruct to make the file 
+/*
+startSearch: will 
+*/
 	static public void startSearch() throws IOException {
 
 			for (String term : userQuery) {
