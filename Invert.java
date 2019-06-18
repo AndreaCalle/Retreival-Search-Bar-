@@ -20,32 +20,7 @@ public class Invert {
 	//this should start the search not be a constructor , much change it 
 	//contruct to make the file 
 	static public void startSearch() throws IOException {
-		/*
-		Scanner in = new Scanner(System.in);
-		System.out.println("Welcome to CPS842 Assignment 2");
-		System.out.println("Choose File(query.text or cacm.all) :");
-		String fileName= in.nextLine();
-		System.out.println("Stemming(On/Off): ");
-		String stem= in.nextLine();
-		makeHashMaps(fileName.trim().toLowerCase(),stem.trim().toLowerCase());
-		System.out.println("Stop Word Removal(On/Off):");
-		String removeWord = in.nextLine();
-		File commonWord = new File("common_words"); 
-        BufferedReader ch = new BufferedReader(new FileReader(commonWord));
-		removeWord = removeWord.trim().toLowerCase(); 
-*/
-      /* makeHashMaps();
-		if(removeWord.equals("on")){
-			removeCommonWords(commonWord, ch, document); 
-			removeCommonWords(commonWord, ch, query); 
-		}
 
-		readFromFile();
-		getQuery(in);
-
-*/
-       // if(fileName.equals("cacm.all")){  
-	
 			for (String term : userQuery) {
 				BufferedReader dff = new BufferedReader(new FileReader("Dictionary.txt"));
 				double idf = getDocumentFrequency(dff, term);
@@ -55,23 +30,6 @@ public class Invert {
 			double qWeight = termFrequencyOfQuery(idfValues);
 
 			termFrequency(document, idfValues, qWeight);
-		
-
-	//	}
-	/*
-		if(fileName.equals("query.txt")){
-	
-			for (String term : userQuery) {
-				BufferedReader dff = new BufferedReader(new FileReader("queryDictionary.txt"));
-				double idf = getDocumentFrequency(dff, term);
-				idfValues.put(term,idf);
-			}
-			System.out.println("IDF values are" + idfValues + "\n");
-			double qWeight = termFrequencyOfQuery(idfValues);
-
-			termFrequency(query, idfValues, qWeight);
-		}
-*/
 	}
 /*
 Parsing the text, Will check on or off to version stemming 
@@ -94,18 +52,7 @@ Parsing the text, Will check on or off to version stemming
 			File file = new File("stemming.txt");
 			BufferedReader br = new BufferedReader(new FileReader(file));
 			doStuff(file, br);
-			//}
-			/*
 
-            else {
-			String[] s = new String[1]; 
-			s[0] = "query.text"; 
-			Stemmer.main(s) ; 
-			File file2 = new File("stemmming.txt");
-			BufferedReader br = new BufferedReader(new FileReader(file2));
-			parseAllQueriesEval(file2,br);
-			}
-			*/
 		}
 	}
 	// test
@@ -119,14 +66,6 @@ Parsing the text, Will check on or off to version stemming
 		dict.close();
 		port.close();
 
-/*
-		PrintWriter queryDict = new PrintWriter("queryDictionary.txt", "UTF-8");
-		PrintWriter queryPost = new PrintWriter("queryPostList.txt", "UTF-8");
-		documentFrequency(query,queryDict);
-		printHashMap(query,queryPost);
-		queryDict.close(); 
-		queryPost.close();
-		*/
 
 	}
 /*
