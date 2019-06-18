@@ -19,7 +19,7 @@ public class Invert {
 
 	//this should start the search not be a constructor , much change it 
 	//contruct to make the file 
-	public Invert() throws IOException {
+	static public void startSearch() throws IOException {
 		/*
 		Scanner in = new Scanner(System.in);
 		System.out.println("Welcome to CPS842 Assignment 2");
@@ -34,7 +34,7 @@ public class Invert {
         BufferedReader ch = new BufferedReader(new FileReader(commonWord));
 		removeWord = removeWord.trim().toLowerCase(); 
 */
-      //  makeHashMaps();
+      /* makeHashMaps();
 		if(removeWord.equals("on")){
 			removeCommonWords(commonWord, ch, document); 
 			removeCommonWords(commonWord, ch, query); 
@@ -43,7 +43,7 @@ public class Invert {
 		readFromFile();
 		getQuery(in);
 
-
+*/
        // if(fileName.equals("cacm.all")){  
 	
 			for (String term : userQuery) {
@@ -76,7 +76,7 @@ public class Invert {
 /*
 Parsing the text, Will check on or off to version stemming 
 */
-    static  void makeHashMaps(String fileName, String stem) throws IOException{
+    static  void makeHashMaps(String stem) throws IOException{
 		if(stem.equals("off")){
 			File file = new File("cacm.all");
 			BufferedReader br = new BufferedReader(new FileReader(file));
@@ -87,14 +87,16 @@ Parsing the text, Will check on or off to version stemming
 			parseAllQueriesEval(file2,br);
 		}
 		if(stem.equals("on")){
-			if(fileName.equals("cacm.all")){
+			//if(fileName.equals("cacm.all")){
 			String[] s = new String[1]; 
 			s[0] = "cacm.all"; 
 			Stemmer.main(s) ; 
 			File file = new File("stemming.txt");
 			BufferedReader br = new BufferedReader(new FileReader(file));
 			doStuff(file, br);
-			}
+			//}
+			/*
+
             else {
 			String[] s = new String[1]; 
 			s[0] = "query.text"; 
@@ -103,6 +105,7 @@ Parsing the text, Will check on or off to version stemming
 			BufferedReader br = new BufferedReader(new FileReader(file2));
 			parseAllQueriesEval(file2,br);
 			}
+			*/
 		}
 	}
 	// test
@@ -116,13 +119,14 @@ Parsing the text, Will check on or off to version stemming
 		dict.close();
 		port.close();
 
-
+/*
 		PrintWriter queryDict = new PrintWriter("queryDictionary.txt", "UTF-8");
 		PrintWriter queryPost = new PrintWriter("queryPostList.txt", "UTF-8");
 		documentFrequency(query,queryDict);
 		printHashMap(query,queryPost);
 		queryDict.close(); 
 		queryPost.close();
+		*/
 
 	}
 /*
@@ -267,12 +271,12 @@ def parseAllQUERIES(file, br)//buffer
 		}
 	}
 
-	static void removeCommonWords(File file, BufferedReader ch, HashMap<Integer, HashMap<String, Integer>> document2)
+	static void removeCommonWords(File file, BufferedReader ch)//, HashMap<Integer, HashMap<String, Integer>> document2)
 		throws FileNotFoundException, IOException {
 		String line = null;
 
 		while ((line = ch.readLine()) != null) {
-			Iterator<Map.Entry<Integer, HashMap<String, Integer>>> t = document2.entrySet().iterator();
+			Iterator<Map.Entry<Integer, HashMap<String, Integer>>> t = document.entrySet().iterator();
 			String comWord = line.replaceAll("\\s", "");
 			while (t.hasNext()) {
 				Map.Entry<Integer, HashMap<String, Integer>> outer = t.next();
@@ -309,6 +313,7 @@ def parseAllQUERIES(file, br)//buffer
 		for (String terms : querySplit) {
 			userQuery.add(terms);
 		}
+
 	}
 
 	static void termFrequency(HashMap<Integer, HashMap<String, Integer>> document, HashMap<String, Double> idf, double qWeight) {

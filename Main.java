@@ -23,28 +23,25 @@ public class Main {
         BufferedReader ch = new BufferedReader(new FileReader(commonWord));
         removeWord = removeWord.trim().toLowerCase();
         if(removeWord.equals("on")){
-			invert.removeCommonWords(commonWord, ch, document); 
-			invert.removeCommonWords(commonWord, ch, query); 
+			invert.removeCommonWords(commonWord, ch); 
 		}
 
-        call(invert,stem,removeWord,fileName);
-        startSearch();
+        call(invert,stem,removeWord);
+        Invert.startSearch();
 
     }
 /*
 Call methond will call the invert class and run the 
 */
-    public static void call(Invert invert,String stem,String removeWord,String fileName)
+    public static void call(Invert invert,String stem,String removeWord)throws FileNotFoundException, IOException 
     {
-      invert.makeHashMaps(fileName.trim().toLowerCase(),stem.trim().toLowerCase());
+      invert.makeHashMaps(stem.trim().toLowerCase());
       invert.readFromFile();
+      //must implement a while loop till user is done searcing query . 
+      Scanner in = new Scanner(System.in);
       invert.getQuery(in);
     }   
 
-    public static void startSearch(){
-
-
-    }
 
 
 }
