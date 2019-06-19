@@ -28,6 +28,7 @@ public class Main {
         call(invert,stem,removeWord);
 
         while(i == 0){
+            invert.userQuery = new ArrayList<>(); //reset the query 
             invert.getQuery(in); 
             invert.startSearch();
             System.out.println("Search for new query(YES/NO):");
@@ -41,7 +42,6 @@ Call methond will call the invert class and run the
 */
     public static void call(Invert invert,String stem,String removeWord)throws FileNotFoundException, IOException 
     {
-
       invert.makeHashMaps(stem.trim().toLowerCase());
       invert.readFromFile();
     }   
