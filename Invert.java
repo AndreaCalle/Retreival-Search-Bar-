@@ -3,6 +3,12 @@ import java.io.*;
 import java.util.*;
 import java.util.Map.Entry;
 import java.security.*;
+/*
+1. chnage the parser 
+2. chnage static to private , create a secure code 
+	using get() method , toString method 
+**SHOULD CREATE A GUI FOR IT ???**
+*/
 
 public class Invert {
 	static HashMap<Integer, HashMap<String, Integer>> document = new HashMap<Integer, HashMap<String, Integer>>();
@@ -13,7 +19,6 @@ public class Invert {
 	static HashMap<String, Integer> queryMap = new HashMap<>();
 	static HashMap<String, Double> termFreq = new HashMap<>();
 	static HashMap<String, Double> idfValues = new HashMap<>();
-	//static HashMap<String, Double> termFreq = new HashMap<>();
 	static List<Double> cosineList = new ArrayList<>();
 
 
