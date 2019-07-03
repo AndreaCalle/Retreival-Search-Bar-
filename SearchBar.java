@@ -1,11 +1,13 @@
 /*
 Andrea Calle 
+Using pagerank alorgthm 
 this is the GUI Search bar 
 must be completed 
 1. need a section where word research result show
 2. buttons need to connect the fumctions
 3. will have a loading bar 
 4. need title 
+5. once connect need to mak the method none static 
 */
 
 import javax.swing.*;
