@@ -9,6 +9,9 @@ must be completed
 4. need title 
 5. once connect need to mak the method none static 
 */
+/*
+will finish tomorrow 
+*/
 
 import javax.swing.*;
 import java.awt.*;
