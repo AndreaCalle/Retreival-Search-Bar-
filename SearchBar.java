@@ -8,6 +8,7 @@ must be completed
 3. will have a loading bar 
 4. need title 
 5. once connect need to mak the method none static 
+6. need a radio buttom for 
 */
 /*
 will finish tomorrow 
@@ -19,11 +20,11 @@ import java.awt.*;
 
 class SearchBar{
       public static void main(String args[]){
-           ProjectMain test = new ProjectMain() ; 
-          
-           JFrame frame = new JFrame("Search query");
-           frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-           frame.setSize(300,300);
+          ProjectMain test = new ProjectMain() ; 
+          test.
+          JFrame frame = new JFrame("Search query");
+          frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+          frame.setSize(300,300);
           JButton button1 = new JButton("search");
           JButton button2 = new JButton("Button 2");
 
