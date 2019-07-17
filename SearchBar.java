@@ -11,8 +11,9 @@ must be completed
 6. need a radio buttom for 
 */
 /*
-will finish tomorrow 
+will finish tomorrow (Thursday)
 not compile yet 
+try to use pagerank 
 */
 
 import javax.swing.*;
