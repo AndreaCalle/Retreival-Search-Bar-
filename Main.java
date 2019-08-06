@@ -4,7 +4,9 @@ import java.util.*;
 import java.util.Map.Entry;
 import java.security.*;
 /*
-HAS BEEN COMPILE !!!!
+1. need to create a constructor 
+2. add getText to be used in searchbar.java 
+3. 
 */
 public class Main {
  
@@ -12,7 +14,7 @@ public class Main {
         Invert invert  = new Invert() ; 
         int i = 0 ; 
         Scanner in = new Scanner(System.in);
-		System.out.println("Welcome to CPS842 Assignment 2"+"\n"+"Stemming(On/Off): ");
+		System.out.println("Welcome "+"\n"+"Stemming(On/Off): ");
         String stem= in.nextLine();
 
 		System.out.println("Stop Word Removal(On/Off):");
@@ -46,6 +48,8 @@ Call methond will call the invert class and run the
       invert.readFromFile();
     }   
 
-
+    public void getText(){
+        
+    }
 
 }
